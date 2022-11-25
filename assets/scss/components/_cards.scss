@@ -1,0 +1,160 @@
+@keyframes heart-beat-in {
+    0% {
+        transform: scale(0);
+        
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+        
+    }
+    
+}
+@keyframes heart-beat-out {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(0);
+    }
+    
+}
+@keyframes disapear {
+    from {
+        transform: scale(1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(2);
+        opacity: 0;
+    }
+}
+@keyframes appear {
+    0% {
+        transform: translateX(0px);
+    }
+    33% {
+        transform: translateX(-4px);    
+    }
+    66% {
+        transform: translateX(4px);  
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+.card{
+    border-radius: 20px;
+    overflow: hidden;
+    @include shadow;
+    position: relative;
+    &:nth-child(n+2) {
+        margin-top: 20px;
+    }
+    &__img{
+        height: $card-img-height;
+        width: 100%;
+        object-fit: cover;
+    }
+    &__new {
+        position: absolute;
+        right: 10px;
+        top: calc($card-img-height * 8 /100);
+        background-color: $tertiary-color;
+        color: saturate(darken($tertiary-color, 48), 44);
+        padding: 0.5em 0.875em;
+        font-weight: 500;
+        font-size: 0.8125em;
+        border-radius: 3px;
+        @include shadow;
+        &--disabled {
+            display: none;
+        }
+    }
+    &__bottom-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 18px 25px 18px 16px;    
+    }
+    &__text {
+        p {
+            margin: 0;
+        }
+        h3 {
+            margin: 0 0 0.4em;
+        }
+    }
+    &__favorite {
+        cursor: pointer;
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        right: 0;
+        padding: 1em 25px 1.5em;
+        font-size: 1.5em;
+        &--input:not(:checked) + label i:hover::after { 
+            @media(hover: none) {
+                animation: heart-beat-out 0.3s forwards;
+            }
+        }
+        &--input:not(:checked) + label i:hover::before {
+                animation: appear 0.3s forwards;
+        }
+        &--input {
+            display: none;
+            &:checked {
+                &  + label i{
+                    &::after {
+                        animation: heart-beat-in 0.3s forwards;
+                        
+                    }
+                    &::before {
+                        animation: disapear 0.5s forwards;
+                    }
+                }
+            }  
+        }
+        
+        &--icon {
+            font-family: 'Font Awesome 6 Free';
+            cursor: pointer;
+            &::before {
+                content: $favorite-icon;
+                display: block;    
+            }
+            &::after {
+                content: $favorite-icon;
+                top: 1em;
+                left: 25px;
+                font-weight: 900;
+                color: transparent;
+                position: absolute;
+                background: linear-gradient(180deg, $primary-color 0%, $secondary-color 100%) ;
+                -webkit-background-clip: text;
+                background-clip: text;
+                transform: scale(0);
+                will-change: transform;
+                @media(hover: hover) {
+                    transition: transform 0.3s ease-in-out;
+                }
+            }
+            /*&:hover::after {
+                @media (hover: hover) {
+                   transform: scale(1.1);                  
+                }
+            }*/
+            /*&:not(:hover)::before {
+                @media (hover: hover) {
+                    animation: none !important;
+                }
+            } */
+        }
+        
+    }
+}

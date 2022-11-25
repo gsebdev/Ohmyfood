@@ -1,0 +1,84 @@
+header {
+    position: relative;
+    height: $header-height;
+    @include center-content;
+    box-shadow: 1px 2px 3px 0 #00000025;
+    .logo {
+        height: $logo-height;
+    }
+}
+
+
+.first-section {
+    background-color: $secondary-background;
+    
+    >div {
+        @include center-content;
+        &:first-child{
+            background-color: calc-color($secondary-background, 5);
+            height: 50px;
+            color: calc-color($secondary-background, 76);
+        }
+    }
+    &__input{
+        margin-left: 1em;
+        font-weight: 700;
+        &:focus-visible {
+            font-size: calc($general-font-size + 2px) ;
+        }
+    }
+    &__title-container {
+        text-align: center;
+        flex-direction: column;
+        padding: calc($section-padding-vertical - 10px) calc($section-padding-horizontal + 15px) calc($section-padding-vertical + 5px);
+        
+    }
+    &.home h1 {
+        margin: 0 25px;
+    }
+    p {
+        font-size: 1.0625em;
+        font-weight: 300;
+        margin-bottom: 2em;
+    }
+}
+.second-section {
+    padding: $section-padding-vertical $section-padding-horizontal calc($section-padding-vertical + 1.125em);
+    h2 {
+        margin-bottom: 1.125em;;
+    }
+}
+.third-section {
+    padding: $section-padding-vertical $section-padding-horizontal calc($section-padding-vertical + 0.8em);
+    background-color: $secondary-background;
+    h2 {
+        margin-bottom: 1.125em;
+    }
+}
+footer {
+    background-color: calc-color($secondary-background, 76);
+    color: black-or-white-color(calc-color($secondary-background, 76));
+    padding: 1.7em 1.5em 2.2em;
+    img {
+        height: 1.5em;
+        filter: invert(black-img-invert(calc-color($secondary-background, 76)));
+    }
+    nav {
+        margin-top: 20px;
+        li {
+            line-height: 1.8em;
+        }
+    }
+    .footer-link {
+        color: black-or-white-color(calc-color($secondary-background, 76));
+        &>h2 {
+            font-weight: 400;
+            font-size: 1em;
+            &>i {
+                font-size: 0.8125em;
+                display: inline-block;
+                width: 2em;
+            }
+        }
+    }
+}
