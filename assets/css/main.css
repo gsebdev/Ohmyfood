@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap"); /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap");
+/*  btn menu */
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
 /**
@@ -329,6 +331,7 @@ h2 {
 h3 {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
+  margin: 0;
 }
 
 h4 {
@@ -622,6 +625,88 @@ footer .footer-link > h2 > i {
   .favorite__icon::after {
     transition: transform 0.3s ease-in-out;
   }
+}
+
+@keyframes super-rotate {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+.btn-menu {
+  display: flex;
+  box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  /* padding: 0.8em 12px;*/
+}
+.btn-menu__title-container {
+  padding: 0.8em 0 0.8em 12px;
+  width: calc(100% - 70px);
+}
+.btn-menu__title-container p {
+  margin: 0.375em 0 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.btn-menu__title-container h3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.btn-menu__left-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  white-space: nowrap;
+  transition: width 0.5s ease-in-out;
+}
+.btn-menu__price {
+  padding: 0.8em 0;
+  width: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-weight: 700;
+}
+.btn-menu__check {
+  position: absolute;
+  right: -60px;
+  height: 100%;
+  font-size: 1.125em;
+  color: #99E2D0;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #99E2D0;
+  transition: transform 0.5s ease-in-out;
+}
+.btn-menu__check i {
+  position: relative;
+  padding: 3px;
+}
+.btn-menu__check i::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  left: 0;
+  top: 0;
+}
+.btn-menu:hover .btn-menu__check {
+  transform: translateX(-60px);
+}
+.btn-menu:hover .btn-menu__check i {
+  animation: super-rotate 0.5s ease-in-out;
+}
+.btn-menu:hover .btn-menu__left-container {
+  width: calc(100% - 60px);
 }
 
 @keyframes heart-beat-in {

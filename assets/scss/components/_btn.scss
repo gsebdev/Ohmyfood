@@ -107,3 +107,88 @@
     }
     
 }
+@keyframes super-rotate {
+    from {
+        transform: rotate(-360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+.btn-menu {
+    display: flex;
+    box-shadow: $btn-menu-shadow;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+   /* padding: 0.8em 12px;*/
+    &__title-container {
+        padding: 0.8em 0 0.8em 12px;
+        width: calc(100% - 70px);
+        p {
+            margin: 0.375em 0 0;
+            overflow: hidden;
+            text-overflow: ellipsis;  
+        }
+        h3 {
+            overflow: hidden;
+            text-overflow: ellipsis; 
+        }
+    }
+    &__left-container {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        white-space: nowrap;
+        transition: width 0.5s ease-in-out;
+    }
+    &__price {
+       padding: 0.8em 0;
+       width: $btn-menu-price-width;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        font-weight: 700;
+
+    }
+    &__check {
+        position: absolute;
+        right: calc(-1 * $btn-menu-check-width);
+        height: 100%;
+        font-size: 1.125em;
+        color: $tertiary-color;
+        width: $btn-menu-check-width;
+        @include center-content;
+        background-color: $tertiary-color;
+        transition: transform 0.5s ease-in-out;
+        i {
+            position: relative;
+            padding: 3px;
+            &::after {
+                content: "";
+                height: 100%;
+                width: 100%;
+                background-color: white;
+                position: absolute;
+                z-index: -1;
+                border-radius: 50%;
+                left: 0;
+                top: 0;
+            }
+
+        }
+    }
+    &:hover {
+        .btn-menu {
+            &__check {
+                transform: translateX(-60px);
+                i {
+                    animation: super-rotate 0.5s ease-in-out;
+                }
+            }
+            &__left-container {
+                width: calc(100% - $btn-menu-check-width)
+            }
+        }
+    }
+}
