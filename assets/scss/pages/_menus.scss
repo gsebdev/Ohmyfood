@@ -24,3 +24,22 @@
         object-fit: cover;
     }
 }
+.menu-part {
+    margin-top: 1.5em;
+    &__title {
+        text-transform: uppercase;
+        font-weight: 400;
+        font-size: 0.875em;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 0.5em;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 60%;
+            height: 3px;
+            bottom: 0;
+            background-color: $tertiary-color;
+        }
+    }
+}

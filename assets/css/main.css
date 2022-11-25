@@ -496,6 +496,26 @@ footer .footer-link > h2 > i {
   object-fit: cover;
 }
 
+.menu-part {
+  margin-top: 1.5em;
+}
+.menu-part__title {
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 0.875em;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5em;
+}
+.menu-part__title::before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 3px;
+  bottom: 0;
+  background-color: #99E2D0;
+}
+
 .btn {
   border: 0;
   height: 50px;
