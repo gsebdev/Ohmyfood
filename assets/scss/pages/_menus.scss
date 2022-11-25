@@ -1,0 +1,26 @@
+.menu {
+    background-color: $secondary-background;
+    border-radius: 50px;
+    margin-top: 220px;
+    position: relative;
+    padding: 2em 1em;
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        padding-right: 1.5em;
+        h1 {
+            font-family: $secondary-font;
+            font-weight: 400;
+            font-size: 1.375em
+        }
+    }
+    &__main-image {
+        position: absolute;
+        z-index:-1;
+        top: -220px;
+        left: 0;
+        height: 270px;
+        width: 100%;
+        object-fit: cover;
+    }
+}

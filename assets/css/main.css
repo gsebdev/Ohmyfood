@@ -382,9 +382,14 @@ header {
   align-items: center;
   justify-content: center;
   box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1450980392);
+  background-color: #ffffff;
 }
 header .logo {
   height: 28px;
+}
+header .arrow-back {
+  position: absolute;
+  left: 1.5em;
 }
 
 .first-section {
@@ -462,6 +467,33 @@ footer .footer-link > h2 > i {
   font-size: 0.8125em;
   display: inline-block;
   width: 2em;
+}
+
+.menu {
+  background-color: #f7f7f7;
+  border-radius: 50px;
+  margin-top: 220px;
+  position: relative;
+  padding: 2em 1em;
+}
+.menu__title {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 1.5em;
+}
+.menu__title h1 {
+  font-family: "Shrikhand", cursive;
+  font-weight: 400;
+  font-size: 1.375em;
+}
+.menu__main-image {
+  position: absolute;
+  z-index: -1;
+  top: -220px;
+  left: 0;
+  height: 270px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .btn {
