@@ -1,5 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap");
 /*  btn menu */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -477,7 +487,10 @@ footer .footer-link > h2 > i {
   border-radius: 50px;
   margin-top: 220px;
   position: relative;
-  padding: 2em 1em;
+  padding: 2em 1em 38px;
+}
+.menu .btn {
+  margin-top: 38px;
 }
 .menu__title {
   display: flex;
@@ -500,7 +513,16 @@ footer .footer-link > h2 > i {
 }
 
 .menu-part {
-  margin-top: 1.5em;
+  margin-top: 38px;
+}
+.menu-part:nth-of-type(1) {
+  animation: fade-in 1s 0s ease-in-out both;
+}
+.menu-part:nth-of-type(2) {
+  animation: fade-in 1s 0.4s ease-in-out both;
+}
+.menu-part:nth-of-type(3) {
+  animation: fade-in 1s 0.8s ease-in-out both;
 }
 .menu-part__title {
   text-transform: uppercase;
@@ -518,12 +540,17 @@ footer .footer-link > h2 > i {
   bottom: 0;
   background-color: #99E2D0;
 }
+.menu-part .btn-menu {
+  margin-top: 0.75em;
+}
 
 .btn {
   border: 0;
   height: 50px;
   box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.1450980392);
   cursor: pointer;
+  margin: 0 auto;
+  display: block;
 }
 .btn--rounded {
   border-radius: 25px;
@@ -532,6 +559,9 @@ footer .footer-link > h2 > i {
 .btn--gradient {
   background: linear-gradient(-5deg, #9356DC 0%, #FF79DA 100%);
   color: #ffffff;
+}
+.btn--wide {
+  padding: 0 3em;
 }
 
 .btn-secondary {
@@ -641,7 +671,27 @@ footer .footer-link > h2 > i {
   border-radius: 20px;
   overflow: hidden;
   position: relative;
-  /* padding: 0.8em 12px;*/
+}
+.btn-menu__label {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+.btn-menu__input {
+  display: none;
+}
+.btn-menu__input:checked + .btn-menu__left-container {
+  width: calc(100% - 60px);
+}
+.btn-menu__input:checked + .btn-menu__left-container + .btn-menu__check {
+  transform: translateX(-60px);
+}
+.btn-menu__input:checked + .btn-menu__left-container + .btn-menu__check i {
+  animation: super-rotate 0.5s ease-in-out;
 }
 .btn-menu__title-container {
   padding: 0.8em 0 0.8em 12px;
@@ -698,15 +748,6 @@ footer .footer-link > h2 > i {
   border-radius: 50%;
   left: 0;
   top: 0;
-}
-.btn-menu:hover .btn-menu__check {
-  transform: translateX(-60px);
-}
-.btn-menu:hover .btn-menu__check i {
-  animation: super-rotate 0.5s ease-in-out;
-}
-.btn-menu:hover .btn-menu__left-container {
-  width: calc(100% - 60px);
 }
 
 @keyframes heart-beat-in {

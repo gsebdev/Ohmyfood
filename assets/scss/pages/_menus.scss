@@ -3,7 +3,10 @@
     border-radius: 50px;
     margin-top: 220px;
     position: relative;
-    padding: 2em 1em;
+    padding: 2em 1em $menu-blocs-gap;
+    .btn {
+        margin-top: $menu-blocs-gap;
+    }
     &__title {
         display: flex;
         justify-content: space-between;
@@ -25,7 +28,8 @@
     }
 }
 .menu-part {
-    margin-top: 1.5em;
+    @include delay-appearing(3, 1, 2.5);
+    margin-top: $menu-blocs-gap;
     &__title {
         text-transform: uppercase;
         font-weight: 400;
@@ -41,5 +45,10 @@
             bottom: 0;
             background-color: $tertiary-color;
         }
+    }
+    .btn-menu {
+        margin-top: 0.75em;
+        
+
     }
 }
