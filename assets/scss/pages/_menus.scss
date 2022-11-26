@@ -28,7 +28,6 @@
     }
 }
 .menu-part {
-    @include delay-appearing(3, 1, 2.5);
     margin-top: $menu-blocs-gap;
     &__title {
         text-transform: uppercase;
@@ -51,4 +50,7 @@
         
 
     }
+}
+.delay-fade-in {
+    @include delay-appearing(4, 1, 2.5);
 }

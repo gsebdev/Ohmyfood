@@ -12,7 +12,7 @@
 }
 @mixin delay-appearing($number: 1, $duration: 1, $speed: 1) {
     @for $i from 1 to $number + 1 {
-        &:nth-of-type(#{$i}) {
+        &>*:nth-child(#{$i}) {
             animation: fade-in #{$duration}s #{($i - 1) * calc($duration / $speed)}s ease-in-out both;
         }
     }
