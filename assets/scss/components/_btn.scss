@@ -5,6 +5,8 @@
     cursor: pointer;
     margin: 0 auto;
     display: block;
+    position: relative;
+    transition: box-shadow 0.3s ease-in-out;
 
     &--rounded {
         border-radius: calc($btn-height / 2);
@@ -12,8 +14,15 @@
     }
 
     &--gradient {
-        background: linear-gradient(-5deg, $primary-color 0%, $secondary-color 100%);
+        background-image: linear-gradient(-5deg, transparent 0%, $secondary-color 100%);
+        background-color: $primary-color;
         color: black-or-white-color($primary-color);
+        transition: all 0.3s ease-in-out;
+        &:hover {
+            background-color: lighten($primary-color, 10%);
+            @include shadow(0.1);
+        }
+        
     }
     &--wide {
         padding: 0 3em;

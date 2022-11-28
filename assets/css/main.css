@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap");
+/* btn */
 /*  btn menu */
 @keyframes fade-in {
   from {
@@ -555,14 +556,22 @@ footer .footer-link > h2 > i {
   cursor: pointer;
   margin: 0 auto;
   display: block;
+  position: relative;
+  transition: box-shadow 0.3s ease-in-out;
 }
 .btn--rounded {
   border-radius: 25px;
   padding: 0 25px;
 }
 .btn--gradient {
-  background: linear-gradient(-5deg, #9356DC 0%, #FF79DA 100%);
+  background-image: linear-gradient(-5deg, transparent 0%, #FF79DA 100%);
+  background-color: #9356DC;
   color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+.btn--gradient:hover {
+  background-color: #ae80e5;
+  box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.2450980392);
 }
 .btn--wide {
   padding: 0 3em;
