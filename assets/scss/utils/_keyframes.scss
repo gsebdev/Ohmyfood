@@ -70,3 +70,40 @@
         transform: rotate(0deg);
     }
 }
+
+@keyframes delay-before-scroll {
+    0%, 80% {
+        overflow: clip;
+    }
+    100% {
+        overflow: unset;
+    }
+}
+
+@keyframes loading {
+    0% {
+        opacity: 1;
+        width: 100%;
+        height: 100%;
+    }
+    80% {
+        opacity: 1
+    }
+    99.99% {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+    }
+    100% {
+        width: 0;
+        height: 0;
+    }
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

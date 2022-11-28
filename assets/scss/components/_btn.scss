@@ -95,11 +95,9 @@
 
         &::after {
             content: $favorite-icon;
-            top: 0;
-            left: 0;
+            @include set-absolute-on-full-container;
             font-weight: 900;
             color: transparent;
-            position: absolute;
             background: linear-gradient(180deg, $primary-color 0%, $secondary-color 100%);
             -webkit-background-clip: text;
             background-clip: text;
@@ -143,11 +141,7 @@
 
     &__label {
         cursor: pointer;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+        @include set-absolute-on-full-container;
         background-color: transparent;
     }
 
@@ -222,14 +216,10 @@
 
             &::after {
                 content: "";
-                height: 100%;
-                width: 100%;
+                @include set-absolute-on-full-container;
                 background-color: white;
-                position: absolute;
                 z-index: -1;
                 border-radius: 50%;
-                left: 0;
-                top: 0;
             }
         }
     }

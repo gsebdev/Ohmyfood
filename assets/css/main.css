@@ -66,6 +66,41 @@
     transform: rotate(0deg);
   }
 }
+@keyframes delay-before-scroll {
+  0%, 80% {
+    overflow: clip;
+  }
+  100% {
+    overflow: unset;
+  }
+}
+@keyframes loading {
+  0% {
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+  }
+  80% {
+    opacity: 1;
+  }
+  99.99% {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    width: 0;
+    height: 0;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -444,6 +479,53 @@ li {
   outline: none;
 }
 
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: 99;
+  animation: loading 3s both;
+}
+.loader__spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
+  background: linear-gradient(to top, #9356DC, #FF79DA);
+  animation: spin 1.2s cubic-bezier(0.2, 0.5, 0.9, 0.5) infinite;
+}
+.loader__spinner::before {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 20px solid;
+  border-color: transparent transparent transparent #ffffff;
+}
+.loader__spinner::after {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+html {
+  animation: delay-before-scroll 3s both;
+}
+
 header {
   position: relative;
   height: 63px;
@@ -691,11 +773,13 @@ footer .footer-link > h2 > i {
 }
 .favorite__icon::after {
   content: "\f004";
-  top: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
   left: 0;
+  top: 0;
   font-weight: 900;
   color: transparent;
-  position: absolute;
   background: linear-gradient(180deg, #9356DC 0%, #FF79DA 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -729,10 +813,10 @@ footer .footer-link > h2 > i {
 .btn-menu__label {
   cursor: pointer;
   position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   height: 100%;
+  left: 0;
+  top: 0;
   background-color: transparent;
 }
 .btn-menu__input {
@@ -794,14 +878,14 @@ footer .footer-link > h2 > i {
 }
 .btn-menu__check i::after {
   content: "";
-  height: 100%;
-  width: 100%;
-  background-color: white;
   position: absolute;
-  z-index: -1;
-  border-radius: 50%;
+  width: 100%;
+  height: 100%;
   left: 0;
   top: 0;
+  background-color: white;
+  z-index: -1;
+  border-radius: 50%;
 }
 
 .card {
