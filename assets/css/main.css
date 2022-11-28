@@ -11,6 +11,60 @@
     transform: translateY(0px);
   }
 }
+@keyframes heart-beat-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes heart-beat-out {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes disapear {
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+@keyframes appear {
+  0% {
+    transform: translateX(0px);
+  }
+  33% {
+    transform: translateX(-4px);
+  }
+  66% {
+    transform: translateX(4px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes super-rotate {
+  from {
+    transform: rotate(-360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -624,23 +678,6 @@ footer .footer-link > h2 > i {
   cursor: pointer;
   font-size: 1.5em;
 }
-.favorite__input {
-  display: none;
-}
-.favorite__input:checked + label i::after {
-  animation: heart-beat-in 0.3s forwards;
-}
-.favorite__input:checked + label i::before {
-  animation: disapear 0.5s forwards;
-}
-@media (hover: none) {
-  .favorite__input:not(:checked) + label i:hover::after {
-    animation: heart-beat-out 0.3s forwards;
-  }
-}
-.favorite___input:not(:checked) + label i:hover::before {
-  animation: appear 0.3s forwards;
-}
 .favorite__icon {
   display: block;
   position: relative;
@@ -662,22 +699,25 @@ footer .footer-link > h2 > i {
   -webkit-background-clip: text;
   background-clip: text;
   transform: scale(0);
-  will-change: transform;
 }
-@media (hover: hover) {
-  .favorite__icon::after {
-    transition: transform 0.3s ease-in-out;
+.favorite__input {
+  display: none;
+}
+.favorite__input:checked + label i::after {
+  animation: heart-beat-in 0.3s forwards;
+}
+.favorite__input:checked + label i::before {
+  animation: disapear 0.5s forwards;
+}
+@media (hover: none) {
+  .favorite__input:not(:checked) + label i:hover::after {
+    animation: heart-beat-out 0.3s forwards;
   }
+}
+.favorite__input:not(:checked) + label i:hover::before {
+  animation: appear 0.3s forwards;
 }
 
-@keyframes super-rotate {
-  from {
-    transform: rotate(-360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
 .btn-menu {
   display: flex;
   box-shadow: 0px 5px 10px 3px rgba(0, 0, 0, 0.1);
@@ -763,52 +803,6 @@ footer .footer-link > h2 > i {
   top: 0;
 }
 
-@keyframes heart-beat-in {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-@keyframes heart-beat-out {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(0);
-  }
-}
-@keyframes disapear {
-  from {
-    transform: scale(1);
-    opacity: 1;
-  }
-  to {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-@keyframes appear {
-  0% {
-    transform: translateX(0px);
-  }
-  33% {
-    transform: translateX(-4px);
-  }
-  66% {
-    transform: translateX(4px);
-  }
-  100% {
-    transform: translateX(0px);
-  }
-}
 .card {
   border-radius: 20px;
   overflow: hidden;
