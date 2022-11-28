@@ -106,28 +106,27 @@
             transform: scale(0);
         }
     }
-
     &__input {
         display: none;
         &:checked {
             &+label i {
                 &::after {
-                    animation: heart-beat-in 0.3s forwards;
+                    animation: heart-beat-in $favorite-transition-duration forwards;
                 }
 
                 &::before {
-                    animation: disapear 0.5s forwards;
+                    animation: disapear calc($favorite-transition-duration + 0.2s) forwards;
                 }
             }
         }
         &:not(:checked)+label i:hover {
             &::after {
                 @media (hover: none) {
-                    animation: heart-beat-out 0.3s forwards;
+                    animation: heart-beat-out $favorite-transition-duration forwards;
                 }
             }
             &::before {
-                animation: appear 0.3s forwards;
+                animation: appear calc($favorite-transition-duration - 0.2s) forwards;
             }
         }
     }
