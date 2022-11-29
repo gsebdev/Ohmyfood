@@ -601,34 +601,6 @@ header .arrow-back {
   }
 }
 
-footer {
-  background-color: #353535;
-  color: #ffffff;
-  padding: 1.7em 1.5em 2.2em;
-}
-footer img {
-  height: 1.5em;
-  filter: invert(1);
-}
-footer nav {
-  margin-top: 20px;
-}
-footer nav li {
-  line-height: 1.8em;
-}
-footer .footer-link {
-  color: #ffffff;
-}
-footer .footer-link > h2 {
-  font-weight: 400;
-  font-size: 1em;
-}
-footer .footer-link > h2 > i {
-  font-size: 0.8125em;
-  display: inline-block;
-  width: 2em;
-}
-
 .menu {
   background-color: #f7f7f7;
   border-top-left-radius: 50px;

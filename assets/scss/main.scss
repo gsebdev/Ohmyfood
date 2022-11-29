@@ -4,7 +4,9 @@
 @import "./utils/mixins";
 @import "./base/reset";
 @import "./base/general";
-@import "./layout/sections";
+@import "./layout/header";
+@import "./layout/footer";
+@import "./pages/home";
 @import "./pages/menus";
 @import "./components/btn";
 @import "./components/cards";

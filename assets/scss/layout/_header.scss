@@ -1,0 +1,14 @@
+header {
+    position: relative;
+    height: $header-height;
+    @include center-content;
+    box-shadow: 1px 2px 3px 0 #00000025;
+    background-color: #ffffff;
+    .logo {
+        height: $logo-height;
+    }
+    .arrow-back {
+        position: absolute;
+        left: 1.5em;
+    }
+}
