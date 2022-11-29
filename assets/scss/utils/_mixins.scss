@@ -20,7 +20,7 @@
 @mixin delay-appearing($number: 1, $duration: 1, $speed: 1) {
     @for $i from 1 to $number + 1 {
         &>*:nth-child(#{$i}) {
-            animation: fade-in #{$duration}s #{($i - 1) * calc($duration / $speed)}s ease-in-out both;
+            animation: fade-in-move-up #{$duration}s #{($i) * calc($duration / $speed)}s ease-in-out both;
         }
     }
 }
