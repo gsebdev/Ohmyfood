@@ -486,7 +486,7 @@ li {
   height: 100%;
   background-color: #ffffff;
   z-index: 99;
-  animation: loading 0s both;
+  animation: loading 3s both;
 }
 .loader__spinner {
   display: flex;
