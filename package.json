@@ -1,0 +1,25 @@
+{
+  "name": "ohmyfood-sebastien-gault",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "sass --watch ./assets/scss/main.scss:./assets/css/main.css",
+    "autoprefix": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gsebdev/OC-P3.git"
+  },
+  "author": "sebastien gault",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gsebdev/OC-P3/issues"
+  },
+  "homepage": "https://github.com/gsebdev/OC-P3#readme",
+  "dependencies": {
+    "autoprefixer": "^10.4.13",
+    "sass": "^1.56.1"
+  }
+}
