@@ -17,9 +17,12 @@ $logo-height: 28px;
 
 $section-padding-horizontal: 20px;
 $section-padding-vertical: 50px;
+/* restaurant section cards */
+$card-gap: 20px;
+$card-img-height: 175px;
 
 $btn-height: 50px;
-$card-img-height: 175px;
+
 /* favorite btn */
 $favorite-transition-duration: 0.5s;
 $favorite-icon: "\f004";
@@ -31,3 +34,6 @@ $btn-menu-check-width: 60px;
 $btn-menu-price-width: 70px;
 $btn-menu-shadow: 0px 5px 10px 3px rgb(0 0 0 / 10%);
 $menu-blocs-gap: 38px;
+
+/* breakpoints */
+$tablet-breakpoint : 481px;

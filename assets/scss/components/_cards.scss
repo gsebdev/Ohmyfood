@@ -3,9 +3,8 @@
     overflow: hidden;
     @include shadow;
     position: relative;
-    &:nth-child(n+2) {
-        margin-top: 20px;
-    }
+    margin: $card-gap 0 0 $card-gap;
+    width: calc(100% - $card-gap);
     &__img{
         height: $card-img-height;
         width: 100%;
@@ -46,5 +45,8 @@
         bottom: 0;
         right: 0;
         padding: 1em 25px 1.5em;
+    }
+    @media (min-width: $tablet-breakpoint) {
+        width: calc(50% - $card-gap);
     }
 }

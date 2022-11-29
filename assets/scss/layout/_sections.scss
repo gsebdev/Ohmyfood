@@ -53,12 +53,23 @@ header {
         margin-bottom: 1.125em;;
     }
 }
-.third-section {
+.third-section { 
     padding: $section-padding-vertical $section-padding-horizontal calc($section-padding-vertical + 0.8em);
     background-color: $secondary-background;
     h2 {
         margin-bottom: 1.125em;
     }
+    &__card-container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin: -#{$card-gap} 0 0 -#{$card-gap};
+        width: calc(100% + $card-gap); 
+        @media (min-width: $tablet-breakpoint ) {
+            flex-direction: row;      
+        }
+    }
+    
 }
 footer {
     background-color: calc-color($secondary-background, 76);

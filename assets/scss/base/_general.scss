@@ -1,6 +1,7 @@
 body {
     font-family: $primary-font;
     font-size: $general-font-size;
+    background: linear-gradient(to bottom, $primary-color, $secondary-color);
 }
 h1 {
     font-family: $primary-font;
@@ -56,7 +57,7 @@ li {
 }
 .loader {
     @include center-content;
-    position: absolute;
+    position: fixed;
     overflow: hidden;
     top: 0;
     left: 0;
@@ -64,7 +65,7 @@ li {
     height: 100%;
     background-color: $main-background;
     z-index: 99;
-    animation: loading 3s both;
+    animation: loading 0s both;
     &__spinner {
         @include center-content;
         position: relative;
@@ -92,6 +93,9 @@ li {
         }
     }
 }
-html {
-    animation: delay-before-scroll 3s both;
+
+.main-container {
+    max-width: 768px;
+    margin: 0 auto;
+    background-color: $main-background;
 }

@@ -71,15 +71,6 @@
     }
 }
 
-@keyframes delay-before-scroll {
-    0%, 80% {
-        overflow: clip;
-    }
-    100% {
-        overflow: unset;
-    }
-}
-
 @keyframes loading {
     0% {
         opacity: 1;

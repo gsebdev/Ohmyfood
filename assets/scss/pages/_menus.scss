@@ -1,6 +1,7 @@
 .menu {
     background-color: $secondary-background;
-    border-radius: 50px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
     margin-top: 220px;
     position: relative;
     padding: 2em 1em $menu-blocs-gap;

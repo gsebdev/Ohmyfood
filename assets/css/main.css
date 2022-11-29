@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap");
+/* restaurant section cards */
 /* favorite btn */
 /* btn */
 /*  btn menu */
+/* breakpoints */
 @keyframes fade-in {
   from {
     opacity: 0;
@@ -64,14 +66,6 @@
   }
   to {
     transform: rotate(0deg);
-  }
-}
-@keyframes delay-before-scroll {
-  0%, 80% {
-    overflow: clip;
-  }
-  100% {
-    overflow: unset;
   }
 }
 @keyframes loading {
@@ -413,6 +407,7 @@ template {
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
+  background: linear-gradient(to bottom, #9356DC, #FF79DA);
 }
 
 h1 {
@@ -483,7 +478,7 @@ li {
   display: flex;
   align-items: center;
   justify-content: center;
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   top: 0;
   left: 0;
@@ -491,7 +486,7 @@ li {
   height: 100%;
   background-color: #ffffff;
   z-index: 99;
-  animation: loading 3s both;
+  animation: loading 0s both;
 }
 .loader__spinner {
   display: flex;
@@ -522,8 +517,10 @@ li {
   background-color: #ffffff;
 }
 
-html {
-  animation: delay-before-scroll 3s both;
+.main-container {
+  max-width: 768px;
+  margin: 0 auto;
+  background-color: #ffffff;
 }
 
 header {
@@ -591,6 +588,18 @@ header .arrow-back {
 .third-section h2 {
   margin-bottom: 1.125em;
 }
+.third-section__card-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: -20px 0 0 -20px;
+  width: calc(100% + 20px);
+}
+@media (min-width: 481px) {
+  .third-section__card-container {
+    flex-direction: row;
+  }
+}
 
 footer {
   background-color: #353535;
@@ -622,7 +631,8 @@ footer .footer-link > h2 > i {
 
 .menu {
   background-color: #f7f7f7;
-  border-radius: 50px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
   margin-top: 220px;
   position: relative;
   padding: 2em 1em 38px;
@@ -893,9 +903,8 @@ footer .footer-link > h2 > i {
   overflow: hidden;
   box-shadow: 1px 5px 8px rgba(0, 0, 0, 0.1450980392);
   position: relative;
-}
-.card:nth-child(n+2) {
-  margin-top: 20px;
+  margin: 20px 0 0 20px;
+  width: calc(100% - 20px);
 }
 .card__img {
   height: 175px;
@@ -935,6 +944,11 @@ footer .footer-link > h2 > i {
   bottom: 0;
   right: 0;
   padding: 1em 25px 1.5em;
+}
+@media (min-width: 481px) {
+  .card {
+    width: calc(50% - 20px);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */
