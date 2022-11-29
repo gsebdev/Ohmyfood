@@ -1,7 +1,7 @@
 body {
     font-family: $primary-font;
     font-size: $general-font-size;
-    background: linear-gradient(to bottom, $primary-color, $secondary-color);
+    /*background: linear-gradient(to bottom, $primary-color, $secondary-color);*/
 }
 h1 {
     font-family: $primary-font;
@@ -65,7 +65,7 @@ li {
     height: 100%;
     background-color: $main-background;
     z-index: 99;
-    animation: loading 3s both;
+    animation: loading 0s both;
     &__spinner {
         @include center-content;
         position: relative;
@@ -92,10 +92,4 @@ li {
             background-color: $main-background;
         }
     }
-}
-
-.main-container {
-    max-width: 768px;
-    margin: 0 auto;
-    background-color: $main-background;
 }

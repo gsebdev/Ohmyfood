@@ -1,5 +1,24 @@
+
+.landing-container {
+    @media (min-width: $desktop-breakpoint) {
+        display: flex;
+        justify-content: center;
+        height: 50vw;
+        max-height: 600px;
+        background: linear-gradient(180deg, $secondary-background, darken($main-background, 10%));
+    }
+}
+
 .first-section {
     background-color: $secondary-background;
+    @media (min-width: $desktop-breakpoint) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: $desktop-margin-horizontal;
+        background-color: transparent;
+        flex: 700px 0 1;
+    }
     
     >div {
         @include center-content;
@@ -7,51 +26,139 @@
             background-color: calc-color($secondary-background, 5);
             height: 50px;
             color: calc-color($secondary-background, 76);
+            @media (min-width: $tablet-breakpoint) {
+                height: 70px;
+            }
+            @media (min-width: $desktop-breakpoint) {
+                height: auto;
+                background-color: transparent;
+                align-self: flex-start;
+            }
+        }
+        @media (min-width: $desktop-breakpoint) {
+            justify-content: left;
+            align-items: flex-start;
         }
     }
     &__input{
         margin-left: 1em;
         font-weight: 700;
         &:focus-visible {
-            font-size: calc($general-font-size + 2px) ;
+            font-size: $general-font-size + 2px;
         }
     }
     &__title-container {
         text-align: center;
         flex-direction: column;
-        padding: calc($section-padding-vertical - 10px) calc($section-padding-horizontal + 15px) calc($section-padding-vertical + 5px);
-        
+        padding: ($section-padding-vertical - 10px) ($section-padding-horizontal + 15px) ($section-padding-vertical + 5px);
+        @media (min-width: $tablet-breakpoint) {
+            padding: ($section-padding-vertical + 20px) ($section-padding-horizontal + 30px) ($section-padding-vertical + 35px);
+        }
+        @media (min-width: $desktop-breakpoint) {
+            text-align: left;
+            padding: 20px 0 0 0;
+        }
     }
-    &.home h1 {
+    h1 {
         margin: 0 25px;
+        @media (min-width: $desktop-breakpoint) {
+            margin: 0;
+            font-size: 2.5em;
+        }
     }
     p {
         font-size: 1.0625em;
         font-weight: 300;
         margin-bottom: 2em;
+        @media (min-width: $desktop-breakpoint) {
+            font-size: 1.2em;
+        }
+    }
+    .btn {
+        @media (min-width: $desktop-breakpoint) {
+            margin: 0;
+        }
     }
 }
 .second-section {
     padding: $section-padding-vertical $section-padding-horizontal calc($section-padding-vertical + 1.125em);
     h2 {
-        margin-bottom: 1.125em;;
+        margin-bottom: 1.125em;
+    }
+    @media (min-width: $tablet-breakpoint) {
+        max-width: $tablet-breakpoint - 1px;
+        margin: 0 auto;
+    }
+    @media (min-width: $desktop-breakpoint) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex: 600px 0 1;
+        padding: $desktop-margin-horizontal;
+        margin: 0;
+        h2 {
+            font-size: 1.125em;
+            color: darken($secondary-background, 76%);
+        }
     }
 }
 .third-section { 
     padding: $section-padding-vertical $section-padding-horizontal calc($section-padding-vertical + 0.8em);
     background-color: $secondary-background;
+    @media (min-width: $tablet-breakpoint) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     h2 {
         margin-bottom: 1.125em;
+        @media (min-width: $tablet-breakpoint) {
+            max-width: $tablet-breakpoint - 1px;
+            width: 100%;
+            margin-left: $card-gap;
+        }
+        @media (min-width: $small-screen-breakpoint ) {
+            max-width: $small-screen-breakpoint - 80px;
+        }
+        @media (min-width: $desktop-breakpoint) {
+            position: relative;
+            margin-bottom: 2.5em;
+            max-width: 1056px;
+            width: calc(100% - 100px);
+            &::before {
+                content: "";
+                position: absolute;
+                height: 1px;
+                width: 50%;
+                background-color: darken($secondary-background, 25%);
+                bottom: -5px;
+                left: 0;
+            }      
+        }
     }
     &__card-container {
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
         margin: -#{$card-gap} 0 0 -#{$card-gap};
-        width: calc(100% + $card-gap); 
-        @media (min-width: $tablet-breakpoint ) {
+        width: calc(100% + $card-gap);
+        
+        @media (min-width: $tablet-breakpoint) {
+            max-width: $tablet-breakpoint - 1px;
+        }
+
+        @media (min-width: $small-screen-breakpoint ) {
+            max-width: $small-screen-breakpoint - 80px;
             flex-direction: row;      
         }
+        @media (min-width: $desktop-breakpoint) {
+            max-width: 1156px;
+            padding: 0 50px;
+            width: unset;
+        }
+        
     }
+   
     
 }

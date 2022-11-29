@@ -407,7 +407,7 @@ template {
 body {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
-  background: linear-gradient(to bottom, #9356DC, #FF79DA);
+  /*background: linear-gradient(to bottom, $primary-color, $secondary-color);*/
 }
 
 h1 {
@@ -486,7 +486,7 @@ li {
   height: 100%;
   background-color: #ffffff;
   z-index: 99;
-  animation: loading 3s both;
+  animation: loading 0s both;
 }
 .loader__spinner {
   display: flex;
@@ -517,12 +517,6 @@ li {
   background-color: #ffffff;
 }
 
-.main-container {
-  max-width: 768px;
-  margin: 0 auto;
-  background-color: #ffffff;
-}
-
 header {
   position: relative;
   height: 63px;
@@ -532,16 +526,126 @@ header {
   box-shadow: 1px 2px 3px 0 rgba(0, 0, 0, 0.1450980392);
   background-color: #ffffff;
 }
+@media (min-width: 481px) {
+  header {
+    height: 93px;
+  }
+}
 header .logo {
   height: 28px;
+}
+@media (min-width: 481px) {
+  header .logo {
+    height: 33px;
+  }
 }
 header .arrow-back {
   position: absolute;
   left: 1.5em;
 }
 
+footer {
+  background-color: #353535;
+  color: #ffffff;
+  padding: 1.7em 1.5em 2.2em;
+}
+@media (min-width: 481px) {
+  footer .footer-container {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 769px) {
+  footer .footer-container {
+    max-width: unset;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (min-width: 1025px) {
+  footer .footer-container {
+    flex-direction: row-reverse;
+    max-width: 1400px;
+  }
+}
+footer img {
+  height: 1.5em;
+  filter: invert(1);
+  transition: opacity 0.2s ease-in-out;
+}
+footer img:hover {
+  opacity: 0.7;
+}
+footer nav {
+  margin-top: 20px;
+}
+@media (min-width: 769px) {
+  footer nav {
+    margin: 0 1.5em 1.5em;
+  }
+  footer nav ul {
+    display: flex;
+  }
+}
+@media (min-width: 1025px) {
+  footer nav {
+    margin: 0 1.5em 0;
+  }
+}
+footer nav li {
+  line-height: 1.8em;
+}
+@media (min-width: 769px) {
+  footer nav li {
+    margin-left: 1.5em;
+  }
+}
+footer .footer-link {
+  color: #ffffff;
+  transition: opacity 0.2s ease-in-out;
+}
+footer .footer-link:hover {
+  opacity: 0.7;
+}
+footer .footer-link > h2 {
+  font-weight: 400;
+  font-size: 1em;
+}
+footer .footer-link > h2 > i {
+  font-size: 0.8125em;
+  display: inline-block;
+  width: 2em;
+}
+@media (min-width: 769px) {
+  footer .footer-link > h2 > i {
+    width: 1.5em;
+  }
+}
+
+@media (min-width: 1025px) {
+  .landing-container {
+    display: flex;
+    justify-content: center;
+    height: 50vw;
+    max-height: 600px;
+    background: linear-gradient(180deg, #f7f7f7, #e6e6e6);
+  }
+}
+
 .first-section {
   background-color: #f7f7f7;
+}
+@media (min-width: 1025px) {
+  .first-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 70px;
+    background-color: transparent;
+    flex: 700px 0 1;
+  }
 }
 .first-section > div {
   display: flex;
@@ -552,6 +656,24 @@ header .arrow-back {
   background-color: #eaeaea;
   height: 50px;
   color: #353535;
+}
+@media (min-width: 481px) {
+  .first-section > div:first-child {
+    height: 70px;
+  }
+}
+@media (min-width: 1025px) {
+  .first-section > div:first-child {
+    height: auto;
+    background-color: transparent;
+    align-self: flex-start;
+  }
+}
+@media (min-width: 1025px) {
+  .first-section > div {
+    justify-content: left;
+    align-items: flex-start;
+  }
 }
 .first-section__input {
   margin-left: 1em;
@@ -565,13 +687,40 @@ header .arrow-back {
   flex-direction: column;
   padding: 40px 35px 55px;
 }
-.first-section.home h1 {
+@media (min-width: 481px) {
+  .first-section__title-container {
+    padding: 70px 50px 85px;
+  }
+}
+@media (min-width: 1025px) {
+  .first-section__title-container {
+    text-align: left;
+    padding: 20px 0 0 0;
+  }
+}
+.first-section h1 {
   margin: 0 25px;
+}
+@media (min-width: 1025px) {
+  .first-section h1 {
+    margin: 0;
+    font-size: 2.5em;
+  }
 }
 .first-section p {
   font-size: 1.0625em;
   font-weight: 300;
   margin-bottom: 2em;
+}
+@media (min-width: 1025px) {
+  .first-section p {
+    font-size: 1.2em;
+  }
+}
+@media (min-width: 1025px) {
+  .first-section .btn {
+    margin: 0;
+  }
 }
 
 .second-section {
@@ -580,13 +729,69 @@ header .arrow-back {
 .second-section h2 {
   margin-bottom: 1.125em;
 }
+@media (min-width: 481px) {
+  .second-section {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1025px) {
+  .second-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 600px 0 1;
+    padding: 70px;
+    margin: 0;
+  }
+  .second-section h2 {
+    font-size: 1.125em;
+    color: #353535;
+  }
+}
 
 .third-section {
   padding: 50px 20px calc(50px + 0.8em);
   background-color: #f7f7f7;
 }
+@media (min-width: 481px) {
+  .third-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
 .third-section h2 {
   margin-bottom: 1.125em;
+}
+@media (min-width: 481px) {
+  .third-section h2 {
+    max-width: 480px;
+    width: 100%;
+    margin-left: 20px;
+  }
+}
+@media (min-width: 769px) {
+  .third-section h2 {
+    max-width: 689px;
+  }
+}
+@media (min-width: 1025px) {
+  .third-section h2 {
+    position: relative;
+    margin-bottom: 2.5em;
+    max-width: 1056px;
+    width: calc(100% - 100px);
+  }
+  .third-section h2::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: 50%;
+    background-color: #b7b7b7;
+    bottom: -5px;
+    left: 0;
+  }
 }
 .third-section__card-container {
   display: flex;
@@ -597,7 +802,20 @@ header .arrow-back {
 }
 @media (min-width: 481px) {
   .third-section__card-container {
+    max-width: 480px;
+  }
+}
+@media (min-width: 769px) {
+  .third-section__card-container {
+    max-width: 689px;
     flex-direction: row;
+  }
+}
+@media (min-width: 1025px) {
+  .third-section__card-container {
+    max-width: 1156px;
+    padding: 0 50px;
+    width: unset;
   }
 }
 
@@ -917,9 +1135,14 @@ header .arrow-back {
   right: 0;
   padding: 1em 25px 1.5em;
 }
-@media (min-width: 481px) {
+@media (min-width: 769px) {
   .card {
     width: calc(50% - 20px);
+  }
+}
+@media (min-width: 1025px) {
+  .card {
+    flex: calc(33.33% - 20px) 0 1;
   }
 }
 

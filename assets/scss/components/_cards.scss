@@ -46,7 +46,10 @@
         right: 0;
         padding: 1em 25px 1.5em;
     }
-    @media (min-width: $tablet-breakpoint) {
+    @media (min-width: $small-screen-breakpoint) {
         width: calc(50% - $card-gap);
+    }
+    @media (min-width: $desktop-breakpoint) {
+        flex: calc(33.33% - $card-gap) 0 1;
     }
 }
