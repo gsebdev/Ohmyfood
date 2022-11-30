@@ -1,3 +1,4 @@
+
 body {
     font-family: $primary-font;
     font-size: $general-font-size;
@@ -92,4 +93,10 @@ li {
             background-color: $main-background;
         }
     }
+}
+html {
+-webkit-tap-highlight-color: transparent; /* transparent with keyword */
+-webkit-tap-highlight-color: rgba(0,0,0,0); /* transparent with rgba */
+-webkit-tap-highlight-color: #00000000; /* transparent with hex with alpha */
+-webkit-tap-highlight-color: #0000; /* transparent with short hex with alpha */
 }
