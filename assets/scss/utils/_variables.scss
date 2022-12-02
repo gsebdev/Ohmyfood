@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Shrikhand&display=swap');
 
-$spinner-duration: 1s;
+/* loader */
+$loading-duration: 1s;
+$spinner-speed: 1.2s;
 
 /* colors */
 $primary-color: #9356DC;
