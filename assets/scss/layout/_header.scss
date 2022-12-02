@@ -3,26 +3,32 @@ header {
     height: $header-height;
     @include center-content;
     box-shadow: 1px 2px 3px 0 #00000025;
-    background-color: #ffffff;
+    background-color: $main-background;
 
     @media (min-width: $tablet-breakpoint) {
         height: calc($header-height + 30px);
     }
+
     a {
         line-height: 0;
     }
+
     .logo {
         height: $logo-height;
+
         @media (min-width: $tablet-breakpoint) {
             height: calc($logo-height + 5px);
         }
     }
+
     .arrow-back {
         position: absolute;
         left: 1.5em;
+
         @media (min-width: $small-screen-breakpoint) {
             left: 2.5em;
         }
+
         @media (hover: hover) and (min-width: $desktop-breakpoint) {
             display: none;
         }

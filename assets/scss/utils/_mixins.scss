@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: center;
 }
+
 @mixin set-absolute-on-full-container {
     position: absolute;
     width: 100%;
@@ -14,11 +15,13 @@
 @mixin section-padding {
     padding: $section-padding-vertical $section-padding-horizontal;
 }
+
 @mixin shadow($fade-in: 0) {
     box-shadow: $btn-shadow-params fade-in($btn-shadow-color, $fade-in);
 }
+
 @mixin delay-appearing($number: 1, $duration: 1, $speed: 1) {
-    @for $i from 1 to $number + 1 {
+    @for $i from 1 to $number+1 {
         &>*:nth-child(#{$i}) {
             animation: fade-in-move-up #{$duration}s #{($i) * calc($duration / $speed)}s ease-in-out both;
         }

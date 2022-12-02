@@ -2,68 +2,81 @@
     background-color: $secondary-background;
     border-top-left-radius: 50px;
     border-top-right-radius: 50px;
-    margin-top: 220px;
+    margin-top: $menu-vertical-gap-from-header;
     position: relative;
     padding: 2em 1em $menu-blocs-gap;
     max-width: $small-screen-breakpoint - 1px;
+
     @media (min-width: $tablet-breakpoint) {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
     @media (min-width: $small-screen-breakpoint) {
         margin-left: auto;
         margin-right: auto;
-        margin-top: calc(39vw - 80px);
+        margin-top: calc($menu-image-height-on-bigger-screens - $menu-overlay-height-on-image-bigger-screens);
     }
+
     @media (min-width: $desktop-breakpoint) {
         margin: 320px auto 0;
     }
+
     .btn {
         margin-top: $menu-blocs-gap;
     }
+
     &__title {
         display: flex;
         justify-content: space-between;
         padding-right: 1.5em;
+
         @media (min-width: $tablet-breakpoint) {
             padding-right: 0;
         }
+
         h1 {
             font-family: $secondary-font;
             font-weight: 400;
             font-size: 1.375em;
+
             @media (min-width: $tablet-breakpoint) {
                 margin-right: 2em;
             }
         }
     }
+
     &__main-image {
         animation: fade-in 1s 0.2s both;
         position: absolute;
-        z-index:-1;
-        top: -220px;
+        z-index: -1;
+        top: -$menu-vertical-gap-from-header;
         left: 0;
-        height: 270px;
+        height: $menu-vertical-gap-from-header + 50px;
         width: 100%;
         object-fit: cover;
+
         @media (min-width: $small-screen-breakpoint) {
             width: 100vw;
             left: unset;
-            height: 39vw;
-            max-height: 400px;
-            top: calc(-1 * (39vw - 80px));
+            height: $menu-image-height-on-bigger-screens;
+            max-height: $menu-image-max-height;
+            top: calc(-1 * ($menu-image-height-on-bigger-screens - $menu-overlay-height-on-image-bigger-screens));
         }
+
         @media (min-width: $desktop-breakpoint) {
             top: -320px;
         }
 
     }
 }
+
 .menu-part {
     margin-top: $menu-blocs-gap;
     max-width: 480px;
     width: 100%;
+
     &__title {
         text-transform: uppercase;
         font-weight: 400;
@@ -71,6 +84,7 @@
         position: relative;
         display: inline-block;
         padding-bottom: 0.5em;
+
         &::before {
             content: "";
             position: absolute;
@@ -80,12 +94,14 @@
             background-color: $tertiary-color;
         }
     }
+
     .btn-menu {
         margin-top: 0.75em;
-        
+
 
     }
 }
+
 .delay-fade-in {
     display: flex;
     flex-direction: column;

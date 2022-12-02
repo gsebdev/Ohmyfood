@@ -1,61 +1,81 @@
 
+html {
+    -webkit-tap-highlight-color: transparent; 
+    -webkit-tap-highlight-color: rgba(0,0,0,0); 
+    -webkit-tap-highlight-color: #00000000; 
+    -webkit-tap-highlight-color: #0000; 
+}
+
 body {
     font-family: $primary-font;
     font-size: $general-font-size;
-    /*background: linear-gradient(to bottom, $primary-color, $secondary-color);*/
 }
+
 h1 {
     font-family: $primary-font;
     font-weight: 700;
     font-size: 1.5em;
     margin: 0;
 }
+
 h2 {
     font-family: $primary-font;
     font-weight: 700;
     font-size: 1.5em;
     margin: 0;
 }
+
 h3 {
     font-family: $primary-font;
     font-weight: 700;
     margin: 0;
 }
+
 h4 {
     font-family: $primary-font;
     font-weight: 500;
 }
+
 h5 {
     font-family: $primary-font;
     font-weight: 500;
 }
+
 h6 {
     font-family: $primary-font;
     font-weight: 400;
 }
+
 a {
     text-decoration: none;
     color: $text-color;
 }
+
 input {
     border: 0;
     background-color: transparent;
     text-align: center;
     display: inline-block;
 }
+
 i {
     font-style: normal;
 }
+
 ul {
     padding: 0;
     margin: 0;
 }
+
 li {
     list-style: none;
 }
+
 :focus-visible {
     outline: none;
 }
+
+
 .loader {
     @include center-content;
     position: fixed;
@@ -67,7 +87,9 @@ li {
     background-color: $main-background;
     z-index: 99;
     animation: loading 3.5s both;
+
     &__spinner {
+
         @include center-content;
         position: relative;
         height: 52px;
@@ -75,6 +97,7 @@ li {
         border-radius: 50%;
         background : linear-gradient(to top, $primary-color, $secondary-color);
         animation: fade-in 1s 0.5s both, spin 1.2s cubic-bezier(0.2,0.5,0.9,0.5) infinite ;
+        
         &::before {
             content: "";
             position: absolute;
@@ -84,6 +107,7 @@ li {
             border: 20px solid;
             border-color: transparent transparent transparent $main-background;
         }
+
         &::after {
             content: "";
             position: absolute;
@@ -94,9 +118,6 @@ li {
         }
     }
 }
-html {
--webkit-tap-highlight-color: transparent; /* transparent with keyword */
--webkit-tap-highlight-color: rgba(0,0,0,0); /* transparent with rgba */
--webkit-tap-highlight-color: #00000000; /* transparent with hex with alpha */
--webkit-tap-highlight-color: #0000; /* transparent with short hex with alpha */
-}
+
+
+

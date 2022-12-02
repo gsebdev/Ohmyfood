@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "sass --watch ./assets/scss/main.scss:./assets/css/main.css",
-    "autoprefix": ""
+    "prefix": "npx postcss ./assets/css/main.css --use autoprefixer -d ./assets/css/"
   },
   "repository": {
     "type": "git",
@@ -14,12 +13,15 @@
   },
   "author": "sebastien gault",
   "license": "ISC",
+  "browserslist": "last 4 versions",
   "bugs": {
     "url": "https://github.com/gsebdev/OC-P3/issues"
   },
   "homepage": "https://github.com/gsebdev/OC-P3#readme",
   "dependencies": {
     "autoprefixer": "^10.4.13",
+    "postcss": "^8.4.19",
+    "postcss-cli": "^10.1.0",
     "sass": "^1.56.1"
   }
 }

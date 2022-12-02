@@ -1,16 +1,20 @@
-.card{
+.card {
+
     border-radius: 20px;
     overflow: hidden;
     @include shadow;
     position: relative;
     margin: $card-gap 0 0 $card-gap;
     width: calc(100% - $card-gap);
-    &__img{
+
+    &__img {
         height: $card-img-height;
         width: 100%;
         object-fit: cover;
     }
+
     &__new {
+
         position: absolute;
         right: 10px;
         top: calc($card-img-height * 8 /100);
@@ -21,35 +25,49 @@
         font-size: 0.8125em;
         border-radius: 3px;
         @include shadow;
+
         &--disabled {
             display: none;
         }
     }
+
     &__bottom-container {
+
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        padding: 18px 25px 18px 16px;    
+        padding: 18px 25px 18px 16px;
     }
+
     &__text {
+
         p {
             margin: 0;
         }
+
         h3 {
             margin: 0 0 0.4em;
         }
     }
+
     .favorite {
+
         position: absolute;
         z-index: 2;
         bottom: 0;
         right: 0;
         padding: 1em 25px 1.5em;
     }
+
     @media (min-width: $small-screen-breakpoint) {
+
         width: calc(50% - $card-gap);
+
     }
+
     @media (min-width: $desktop-breakpoint) {
+
         flex: calc(33.33% - $card-gap) 0 1;
+
     }
 }
